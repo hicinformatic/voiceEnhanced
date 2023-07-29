@@ -1,72 +1,134 @@
 # npcSpeaker
-Plugin to spawn npcs  and make them talking or thinking
+Plugin to enhance voice perimeter action
 
 # How to install
 
 1. download the git repository
 2. uncompress in your fxserver
-3. add ensure npcSpeaker to the server.cfg
+3. add ensure voiceEnhanced to the server.cfg
 
 # How it works :
-You need to edit "config.lua" file to add some npcs
+You need to edit "config.lua" file to change as you want
 
+## Colors
 ```
-Config.NpcsList = {
-    {
-        timer = 7000,
-        level = "normal",
-        bubble = "speak",
-        model = "s_m_y_dockwork_01",
-        animated = true,
-        animation = {"rcmjosh1@impatient", "idle_b"},
-        coords = {1012.236, -2895.534, 10.260, 300.00},
-        canDialog = true,
-        name = "Edward Elric",
-        dialog = "I lost my arm",
-        actionDialog = true,
-        oldUi = false,
-        mood = "face"
-  },
-  ...
+Config.Colors = {
+    whisper = { r = 0, g = 181, b = 255, a = 255 },
+    default = { r = 60, g = 228, b = 60, a = 255 },
+    shout = { r = 255, g = 0, b = 0, a = 255 },
+    current = { r = 166, g = 166, b = 255, a = 255 },
 }
 ```
 
-## Details
+| Config  | Description | Default | Options |
+| ------------- | ------------- | ------------- | ------------- |
+| whisper | | | { r = 0, g = 181, b = 255, a = 255 } |
+| default | | | { r = 60, g = 228, b = 60, a = 255 } |
+| shout | | | { r = 255, g = 0, b = 0, a = 255 } |
+| current | | | { r = 166, g = 166, b = 255, a = 255 } |
+
+## Icons
+```
+Config.Icons = {
+    x = 0.009,
+    y = 0.0,
+    scale = 0.35,
+    coef = 1.2,
+    default = "🔉",
+    shout = "🔊",
+    whisper = "🔈",
+    current = "🔉",
+}
+```
 
 | Config  | Description | Default | Options |
 | ------------- | ------------- | ------------- | ------------- |
-| timer  | display time in ms  | 7000 | - |
-| level  | like a log level change the bubble color  | normal | normal, info, success, danger, warning |
-| bubble | bubble type | speak | speak, think |
-| model | Ped model ( PEDs list can be found here : https://wiki.rage.mp/index.php?title=Peds) | - | - |
-| animated | Is animated | false | false/true |
-| animation | list info {'category', 'action'} (Animations list can be found here : https://docs.ragepluginhook.net/html/62951c37-a440-478c-b389-c471230ddfc5.htm) | - | - |
-| coords | GPS coordinates | ------------- | ------------- |
-| canDialog | Can dialog or not (just living) | false | false/true |
-| name |  NPC's fullname | - | - |
-| actionDialog | ------------- | false | false/true |
-| oldUi | old ui with ped avatar or new ui html | false | false/true |
-| mood | Smiley to display (optional) | - | - |
+| x | | |  0.009 |
+| y | | |  0.0 |
+| scale | | |  0.35 |
+| coef | | |  1.2 |
+| default | | |  "🔉" |
+| shout | | |  "🔊" |
+| whisper | | |  "🔈" |
+| current | | |  "🔉" |
 
+## Marker
+```
+Config.Marker = {
+    enable = false,
+    whisper = 3.0,
+    default = 10.0,
+    shout = 30.0,
+    current = 30.0,
+    coef = 2.0,
+    type = 1,
+    dirX = 0.0,
+    dirY = 0.0,
+    dirZ = 0.0,
+    rotX = 0,
+    rotY = 0.0,
+    rotZ = 0.0,
+    bobUpAndDown = false,
+    faceCamera = true,
+    p19 = 2,
+    rotate = false,
+    textureDict = false,
+    textureName = false,
+    drawOnEnts =false,
+    offset = 0.0,
+}
+```
 
-# OLD UI / NEW UI
+| Config  | Description | Default | Options |
+| ------------- | ------------- | ------------- | ------------- |
+| enable | | | false |
+| whisper | | | 3.0 |
+| default | | | 10.0 |
+| shout | | | 30.0 |
+| current | | | 30.0 |
+| coef | | | 2.0 |
+| type | | | 1 |
+| dirX | | | 0.0 |
+| dirY | | | 0.0 |
+| dirZ | | | 0.0 |
+| rotX | | | 0 |
+| rotY | | | 0.0 |
+| rotZ | | | 0.0 |
+| bobUpAndDown | | | false |
+| faceCamera | | | true |
+| p19 | | | 2 |
+| rotate | | | false |
+| textureDict | | | false |
+| textureName | | | false |
+| drawOnEnts | | | alse |
+| offset | | | 0.0 |
 
-old version :
+## Sphere
+```
+Config.Sphere = {
+    enable = true,
+    whisper = 3.0,
+    default = 10.0,
+    shout = 30.0,
+    current = 30.0,
+    coef = 1.0,
+    opacity = 0.5,
+    offset = 1.0,
+}
+```
 
-![alt text](https://github.com/hicinformatic/npcSpeaker/blob/main/screens/oldui.png?raw=true)
-
-new version :
-
-![alt text](https://github.com/hicinformatic/npcSpeaker/blob/main/screens/newui.png?raw=true)
-
-## Bubble type
-
-| Speak  | Think |
-| ------------- | ------------- |
-| ![alt text](https://github.com/hicinformatic/npcSpeaker/blob/main/screens/speak_example.png?raw=true)  | ![alt text](https://github.com/hicinformatic/npcSpeaker/blob/main/screens/think_example.png?raw=true) |
+| Config  | Description | Default | Options |
+| ------------- | ------------- | ------------- | ------------- |
+| enable | | | true |
+| whisper | | | 3.0 |
+| default | | | 10.0 |
+| shout | | | 30.0 |
+| current | | | 30.0 |
+| coef | | | 1.0 |
+| opacity | | | 0.5 |
+| offset | | | 1.0 |
 
 # Next step
 
-- Interact with npc by dialog box or event (accept something, ask something or do a certain emote...)
-- Npc should give one time element or multiple time (cooldown, spawn...)
-- Make an admin interface to facilitate configuration (qbcore, esx...) 
+- Count players in perimeter
+
