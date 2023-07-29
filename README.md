@@ -1,4 +1,4 @@
-# npcSpeaker
+# voiceEnhanced
 Plugin to enhance voice perimeter action
 
 # How to install
