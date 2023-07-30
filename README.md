@@ -1,5 +1,7 @@
 # voiceEnhanced
-Plugin to enhance voice perimeter action
+Plugin to enhance voice perimeter action with preview as a circle or sphere
+
+DEMO : https://youtu.be/PdJdZUI4kNM
 
 # How to install
 
