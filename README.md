@@ -119,7 +119,7 @@ Config.Sphere = {
 }
 ```
 
-| Config  | Description | Default | Options |
+| Config  | Description | Default |
 | ------------- | ------------- | ------------- |
 | enable | enable or disable this type | true |
 | whisper | range whisper | 3.0 |
