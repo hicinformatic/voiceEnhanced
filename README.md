@@ -134,3 +134,8 @@ Config.Sphere = {
 
 - Count players in perimeter
 
+# Thanks to
+
+- Andyyy7666
+- https://github.com/Andyyy7666/VoiceRange
+- This repo helped me so much
